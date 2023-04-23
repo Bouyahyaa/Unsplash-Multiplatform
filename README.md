@@ -25,7 +25,9 @@ multiplatform , Coroutines, Flow, Decompose, MVVM Architecture, Koin, Ktor, SqlD
 ## 🔗 Social Links
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bilel-bouyahya/)
+
 <br>
+
 [Follow me](https://github.com/Bouyahyaa) on GitHub
 
 ## Screenshots
