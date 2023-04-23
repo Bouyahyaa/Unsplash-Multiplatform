@@ -23,6 +23,12 @@ multiplatform.
 <br>
 [Follow me](https://github.com/Bouyahyaa) on GitHub
 
+## Screenshots
+
+  ### Android
+
 ![Screenshot_1682290052](https://user-images.githubusercontent.com/74788624/233870322-821b7dbf-157b-4961-ad4a-4407366ff205.png)
+
+  ### IOS
 
 ![Simulator Screen Shot - iPhone 14 - 2023-04-23 at 23 47 24](https://user-images.githubusercontent.com/74788624/233870331-311e6e38-4d6a-481a-ab20-77ae39c2db49.png)
