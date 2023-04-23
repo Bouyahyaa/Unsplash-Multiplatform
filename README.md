@@ -17,7 +17,7 @@ MyNote is KotlinMultiplatform project with 99% shared code, built with Compose m
 - [BilelBouyahya](https://github.com/Bouyahyaa)
 
 ## 🔗 Social Links
-[![linkedin]()](https://www.linkedin.com/in/bilel-bouyahya/) 
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bilel-bouyahya/) 
 <br>
 [Follow me](https://github.com/Bouyahyaa) on GitHub
 
