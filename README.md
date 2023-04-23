@@ -10,7 +10,6 @@ MyNote is KotlinMultiplatform project with 99% shared code, built with Compose m
 - [Decompose](https://github.com/arkivanov/Decompose): for navigation, Instance retaining etc.
 - [SQLDelight](https://github.com/cashapp/sqldelight): for storage.
 - [Koin](https://github.com/InsertKoinIO/koin): for dependency injection.
-- Version Catalogue: for dependency management.
 
 ## Authors
 
