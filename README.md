@@ -1,7 +1,7 @@
 # Unsplash-Multiplatform
 
 Unsplash-Multiplatform is KotlinMultiplatform project with 99% shared code, built with Compose
-multiplatform.
+multiplatform , Coroutines, Flow, Decompose, MVVM Architecture, Koin, Ktor, SqlDelight
 <br>
 <br>
 
@@ -9,9 +9,14 @@ multiplatform.
 
 - [Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform): JetBrains Compose (UI
   Toolkit).
+- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines).
+- [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/)
+  for asynchronous.
 - [Decompose](https://github.com/arkivanov/Decompose): for navigation, Instance retaining etc.
 - [SQLDelight](https://github.com/cashapp/sqldelight): for storage.
 - [Koin](https://github.com/InsertKoinIO/koin): for dependency injection.
+- Architecture
+    - MVVM Architecture
 
 ## Authors
 
