@@ -1,0 +1,56 @@
+CREATE TABLE PictureEntity(
+    id TEXT NOT NULL PRIMARY KEY,
+    width TEXT,
+    height TEXT,
+    color TEXT,
+    created_at TEXT,
+    updated_at TEXT,
+    description TEXT,
+    raw TEXT,
+    full TEXT,
+    regular TEXT,
+    thumb TEXT,
+    idUser TEXT,
+    username TEXT,
+    name TEXT,
+    small TEXT,
+    medium TEXT,
+    large TEXT,
+    likes TEXT,
+    isLiked INTEGER NOT NULL DEFAULT 0
+);
+
+getAllPictures:
+SELECT *
+FROM PictureEntity
+WHERE LOWER(username) LIKE '%' || LOWER(:query) || '%' OR
+                UPPER(:query) == username;
+
+insertPicture:
+INSERT OR REPLACE
+INTO PictureEntity(
+    id,
+    width,
+    height,
+    color,
+    created_at,
+    updated_at,
+    description,
+    raw,
+    full,
+    regular,
+    thumb,
+    idUser,
+    username,
+    name,
+    small,
+    medium,
+    large,
+    likes,
+    isLiked
+)
+VALUES ?;
+
+deletePicture:
+DELETE FROM PictureEntity
+WHERE id = ?;
