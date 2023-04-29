@@ -15,6 +15,7 @@ multiplatform , Coroutines, Flow, Decompose, MVVM Architecture, Koin, Ktor, SqlD
 - [Decompose](https://github.com/arkivanov/Decompose): for navigation, Instance retaining etc.
 - [SQLDelight](https://github.com/cashapp/sqldelight): for storage.
 - [Koin](https://github.com/InsertKoinIO/koin): for dependency injection.
+- [Ktor](https://ktor.io/): for making network requests.
 - Architecture
     - MVVM Architecture
 
