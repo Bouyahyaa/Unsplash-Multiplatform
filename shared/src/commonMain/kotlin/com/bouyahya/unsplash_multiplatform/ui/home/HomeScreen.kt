@@ -76,6 +76,9 @@ internal fun HomeScreen(
                             viewModel.onEvent(
                                 HomeEvent.LikePicture(picture.id)
                             )
+                        },
+                        onItemClick = {
+                            viewModel.onEvent(HomeEvent.OnPictureClick(picture))
                         }
                     )
                 }

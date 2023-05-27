@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import com.arkivanov.decompose.ComponentContext
 import com.arkivanov.essenty.lifecycle.doOnDestroy
 import com.bouyahya.unsplash_multiplatform.core.Resource
+import com.bouyahya.unsplash_multiplatform.domain.model.Picture
 import com.bouyahya.unsplash_multiplatform.domain.use_case.DeletePictures.DeletePicturesUseCase
 import com.bouyahya.unsplash_multiplatform.domain.use_case.getPictures.GetPicturesUseCase
 import com.bouyahya.unsplash_multiplatform.domain.use_case.likePictures.LikePicturesUseCase
@@ -14,7 +15,8 @@ class HomeViewModel constructor(
     private val componentContext: ComponentContext,
     private val getPicturesUseCase: GetPicturesUseCase,
     private val deletePicturesUseCase: DeletePicturesUseCase,
-    private val likePicturesUseCase: LikePicturesUseCase
+    private val likePicturesUseCase: LikePicturesUseCase,
+    private val moveToPictureDetails: (Picture) -> Unit
 ) : ComponentContext by componentContext {
     private val viewModelScope = CoroutineScope(Dispatchers.Main.immediate)
     private var searchJob: Job? = null
@@ -28,7 +30,6 @@ class HomeViewModel constructor(
 
     fun onEvent(event: HomeEvent) {
         when (event) {
-
             is HomeEvent.LikePicture -> {
                 viewModelScope.launch {
                     val pictures = _state.value.pictures.map { picture ->
@@ -65,6 +66,10 @@ class HomeViewModel constructor(
                         pictures = pictures
                     )
                 }
+            }
+
+            is HomeEvent.OnPictureClick -> {
+                moveToPictureDetails.invoke(event.picture)
             }
         }
     }

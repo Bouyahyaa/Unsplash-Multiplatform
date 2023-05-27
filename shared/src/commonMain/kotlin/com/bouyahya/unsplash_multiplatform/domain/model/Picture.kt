@@ -1,5 +1,9 @@
 package com.bouyahya.unsplash_multiplatform.domain.model
 
+import com.arkivanov.essenty.parcelable.Parcelable
+import com.arkivanov.essenty.parcelable.Parcelize
+
+@Parcelize
 data class Picture(
     val id: String,
     val width: String?,
@@ -26,4 +30,4 @@ data class Picture(
 
     val likes: String?,
     val isLiked: Boolean = false,
-)
+) : Parcelable

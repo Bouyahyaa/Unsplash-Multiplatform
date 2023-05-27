@@ -25,10 +25,12 @@ internal fun PictureListItem(
     liked: Boolean,
     onDeleteClick: () -> Unit,
     onLikeClick: () -> Unit,
+    onItemClick: () -> Unit
 ) {
-
     Card(
-        modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(15.dp), elevation = 5.dp
+        modifier = Modifier.fillMaxWidth().clickable {
+            onItemClick()
+        }, shape = RoundedCornerShape(15.dp), elevation = 5.dp
     ) {
         Box(modifier = Modifier.height(200.dp)) {
 
@@ -37,18 +39,17 @@ internal fun PictureListItem(
                 contentDescription = contentDescription,
                 contentScale = ContentScale.Crop
             )
-            Box(modifier = Modifier
-                .background(
-                    Brush.verticalGradient(
-                        colors = listOf(
-                            Color.Transparent, Color.Black
-                        ), startY = 300f
+            Box(
+                modifier = Modifier
+                    .background(
+                        Brush.verticalGradient(
+                            colors = listOf(
+                                Color.Transparent, Color.Black
+                            ), startY = 300f
+                        )
                     )
-                )
-                .fillMaxSize()
-                .clickable {
-
-                }) {
+                    .fillMaxSize()
+            ) {
                 IconButton(
                     onClick = {
                         onDeleteClick()

@@ -5,6 +5,8 @@ import com.arkivanov.decompose.router.stack.*
 import com.arkivanov.decompose.value.Value
 import com.arkivanov.essenty.parcelable.Parcelable
 import com.arkivanov.essenty.parcelable.Parcelize
+import com.bouyahya.unsplash_multiplatform.domain.model.Picture
+import com.bouyahya.unsplash_multiplatform.ui.details.PictureDetailsViewModel
 import com.bouyahya.unsplash_multiplatform.ui.home.HomeViewModel
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
@@ -27,6 +29,7 @@ class UnsplashRootComponent(
     private fun createChild(config: Config, componentContext: ComponentContext): Child {
         return when (config) {
             is Config.Home -> Child.Home(home(componentContext))
+            is Config.Details -> Child.Details(pictureDetails(componentContext, config))
         }
     }
 
@@ -36,15 +39,26 @@ class UnsplashRootComponent(
             getPicturesUseCase = get(),
             deletePicturesUseCase = get(),
             likePicturesUseCase = get()
-        )
+        ) {
+            navigation.push(Config.Details(it))
+        }
+
+    private fun pictureDetails(componentContext: ComponentContext, config: Config.Details) =
+        PictureDetailsViewModel(componentContext, picture = config.picture) {
+            navigation.pop()
+        }
 
 
     sealed class Child {
         class Home(val component: HomeViewModel) : Child()
+        class Details(val component: PictureDetailsViewModel) : Child()
     }
 
     private sealed class Config : Parcelable {
         @Parcelize
         object Home : Config()
+
+        @Parcelize
+        data class Details(val picture: Picture) : Config()
     }
 }
